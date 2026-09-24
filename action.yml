@@ -1,0 +1,14 @@
+name: setup-git-credentials
+description: Allow cloning private repositories
+author: Maarten de Vries
+branding:
+  icon: lock
+  color: orange
+inputs:
+  credentials:
+    description: git credentials to use
+
+runs:
+  pre: chainguard-phonehome.js
+  using: node24
+  main: lib/main.mjs

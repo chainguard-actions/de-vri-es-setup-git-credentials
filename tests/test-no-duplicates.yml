@@ -1,0 +1,36 @@
+name: Test duplicate credentials are not added twice
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Run action first time
+        id: first
+        uses: .
+        with:
+          credentials: "https://dupuser:duptoken@github.com/"
+
+      - name: Run action second time with same credential
+        id: second
+        uses: .
+        with:
+          credentials: "https://dupuser:duptoken@github.com/"
+
+      - name: Assert credentials file has exactly one entry (no duplicates)
+        run: |
+          CRED_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/git/credentials"
+          echo "Checking credentials file: $CRED_FILE"
+          if [ ! -f "$CRED_FILE" ]; then
+            echo "FAIL: credentials file does not exist at $CRED_FILE"
+            exit 1
+          fi
+          LINE_COUNT=$(grep -c . "$CRED_FILE" || true)
+          echo "Line count: $LINE_COUNT"
+          if [ "$LINE_COUNT" -ne 1 ]; then
+            echo "FAIL: expected exactly 1 credential line (no duplicates), got $LINE_COUNT"
+            exit 1
+          fi
+          echo "PASS: no duplicate credentials added (line count = $LINE_COUNT)"

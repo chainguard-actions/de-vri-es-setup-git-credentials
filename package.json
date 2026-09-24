@@ -1,0 +1,30 @@
+{
+  "name": "setup-git-credentials",
+  "version": "2.2.0",
+  "private": true,
+  "description": "Allow cloning private repositories",
+  "type": "module",
+  "main": "lib/main.mjs",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/de-vri-es/setup-git-credentials.git"
+  },
+  "keywords": [
+    "git",
+    "private",
+    "clone"
+  ],
+  "author": "Maarten de Vries <maarten@de-vri.es>",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "@actions/core": "^3.0.0",
+    "@actions/exec": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.2",
+    "typescript": "^6.0.3"
+  }
+}
