@@ -6,9 +6,9 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 
 ## Versions
 
-| Version | Tag | Upstream commit |
-|---------|-----|-----------------|
-| v2.2.0 | [`v2.2.0`](https://github.com/chainguard-actions/de-vri-es-setup-git-credentials/tree/v2.2.0) | [`5dd446b`](https://github.com/de-vri-es/setup-git-credentials/commit/5dd446b3857806f44ea73acf83c193190a385d63) |
+| Version | Tag | Upstream commit | Hardening report |
+|---------|-----|-----------------|------------------|
+| v2.2.0 | [`v2.2.0`](https://github.com/chainguard-actions/de-vri-es-setup-git-credentials/tree/v2.2.0) | [`5dd446b`](https://github.com/de-vri-es/setup-git-credentials/commit/5dd446b3857806f44ea73acf83c193190a385d63) | [`HARDENING.md`](https://github.com/chainguard-actions/de-vri-es-setup-git-credentials/blob/v2.2.0/HARDENING.md) |
 
 ## Privacy
 
